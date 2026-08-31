@@ -1,0 +1,646 @@
+/* ===== Design tokens (matched from nagelibre.org / WordPress "Euphony" theme) ===== */
+:root {
+  --bg: #262626;
+  --bg-panel: #1a1a1a;
+  --text-muted: #7b7b7b;
+  --text-white: #ffffff;
+  --nav-link: rgba(255, 255, 255, 0.65);
+  --accent-orange: #f9a926;
+  --accent-red: #dd0a35;
+  --gold-start: #ffe259;
+  --gold-end: #ffa751;
+  --border: rgba(255, 255, 255, 0.1);
+  --font-body: "PT Sans", Helvetica, Arial, sans-serif;
+  --font-script: "Mrs Saint Delafield", cursive;
+}
+
+* { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul { margin: 0; padding: 0; }
+li { list-style: none; }
+
+.container {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* ===== Header ===== */
+.site-header {
+  position: relative;
+  z-index: 20;
+  padding: 20px 0;
+}
+
+.site-header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.site-branding {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  min-width: 0;
+}
+
+.site-branding img {
+  width: 56px;
+  height: 56px;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  color: var(--text-white);
+  line-height: 1.2;
+}
+
+.site-title a { color: var(--text-white); }
+
+.site-description {
+  margin: 2px 0 0;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: 0.2px;
+}
+
+.menu-toggle {
+  display: none;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--text-white);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.menu-toggle .icon-close { display: none; }
+.menu-toggle.is-open .icon-open { display: none; }
+.menu-toggle.is-open .icon-close { display: inline; }
+
+.main-navigation {
+  display: flex;
+}
+
+.nav-menu {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.nav-menu a {
+  display: block;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--nav-link);
+  transition: color 0.15s ease;
+  white-space: nowrap;
+}
+
+.nav-menu a:hover,
+.nav-menu li.current a {
+  color: var(--accent-orange);
+}
+
+/* ===== Hero ===== */
+.hero {
+  position: relative;
+  background-image: url("../images/hero.jpg");
+  background-size: cover;
+  background-position: center top;
+  padding-top: 10px;
+}
+
+.hero-inner {
+  padding: 60px 24px 90px;
+  max-width: 640px;
+}
+
+.hero-cover {
+  background: #fff;
+  padding: 24px;
+  width: 100%;
+  max-width: 360px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+}
+
+.hero-cover img { width: 100%; }
+
+.hero-tagline {
+  color: var(--text-white);
+  font-size: 20px;
+  margin: 28px 0 24px;
+  font-weight: 400;
+}
+
+.btn-gold {
+  display: inline-block;
+  background-image: linear-gradient(var(--gold-start), var(--gold-end));
+  color: #111111;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 15px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 14px 35px;
+  border-radius: 28px;
+  border: none;
+  cursor: pointer;
+}
+
+/* ===== Page header (About Us / French Vinyl Club) ===== */
+.page-header {
+  padding: 70px 0 20px;
+}
+
+.page-title {
+  font-family: var(--font-script);
+  font-weight: 400;
+  font-size: 44px;
+  color: var(--text-white);
+  margin: 0;
+}
+
+/* ===== Main content ===== */
+.site-main {
+  padding: 20px 0 80px;
+}
+
+/* About Us page */
+.about-grid {
+  display: grid;
+  grid-template-columns: minmax(280px, 460px) 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+.about-grid img { width: 100%; }
+
+.about-text p {
+  margin: 0 0 22px;
+  font-size: 18px;
+  color: var(--text-muted);
+}
+
+.about-text a,
+.about-text strong,
+.about-text b {
+  color: var(--text-white);
+  font-weight: 700;
+}
+
+.about-text a:hover { color: var(--accent-orange); }
+
+.about-player-wrap { margin-top: 40px; }
+
+/* French Vinyl Club page */
+.club-intro {
+  max-width: 760px;
+  margin-bottom: 10px;
+}
+
+.club-intro p {
+  font-size: 18px;
+  margin: 0 0 22px;
+}
+
+.album {
+  display: grid;
+  grid-template-columns: minmax(240px, 380px) 1fr;
+  gap: 50px;
+  align-items: start;
+  padding: 60px 0;
+  border-top: 1px solid var(--border);
+}
+
+.album:first-of-type { border-top: none; }
+
+.album img { width: 100%; }
+
+.album-heading {
+  color: var(--text-white);
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin: 0 0 6px;
+}
+
+.album-title {
+  color: var(--text-white);
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0 0 24px;
+  line-height: 1.35;
+}
+
+.album-meta { margin: 0 0 20px; }
+
+.album-meta-label {
+  color: var(--text-white);
+  font-weight: 700;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.album-meta a {
+  color: var(--accent-orange);
+  word-break: break-word;
+}
+
+.album-player-wrap { margin-top: 30px; }
+
+/* ===== Footer ===== */
+.site-footer {
+  position: relative;
+  background-image:
+    linear-gradient(rgba(10, 10, 10, 0.82), rgba(10, 10, 10, 0.9)),
+    url("../images/footer-bg.jpg");
+  background-size: cover;
+  background-position: center;
+  padding: 60px 0 30px;
+  text-align: center;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+  margin-bottom: 30px;
+}
+
+.footer-social a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--text-white);
+  font-size: 16px;
+}
+
+.footer-social a svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+.footer-social a:hover {
+  color: var(--accent-orange);
+  border-color: var(--accent-orange);
+}
+
+.site-info {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+}
+
+/* ===== Podcast Player ===== */
+.player {
+  background: #fff;
+  color: #333333;
+  border-radius: 2px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+}
+
+.player-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  padding: 26px 26px 16px;
+}
+
+.player-cover {
+  width: 68px;
+  height: 68px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #eee;
+}
+
+.player-cover img { width: 100%; height: 100%; object-fit: cover; }
+
+.player-info { min-width: 0; }
+
+.player-show {
+  font-size: 13px;
+  color: #888;
+  margin: 0 0 2px;
+}
+
+.player-episode-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #222;
+  margin: 0 0 6px;
+}
+
+.player-episode-desc {
+  font-size: 14px;
+  color: #777;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.player-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 6px 26px 18px;
+  flex-wrap: wrap;
+}
+
+.player-controls button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #444;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.player-controls button:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+
+.rate-btn {
+  width: 40px;
+  height: 26px;
+  border-radius: 13px;
+  background: #eee !important;
+  font-size: 12px;
+  font-weight: 700;
+  color: #333 !important;
+}
+
+.skip-btn {
+  font-size: 11px;
+  font-weight: 700;
+  flex-direction: column;
+  gap: 2px;
+  color: #444;
+}
+
+.skip-btn svg { width: 20px; height: 20px; }
+
+.step-btn svg { width: 18px; height: 18px; fill: #999; }
+.step-btn:hover svg { fill: #555; }
+
+.play-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: var(--accent-red) !important;
+}
+
+.play-btn svg {
+  width: 20px;
+  height: 20px;
+  fill: #fff;
+  margin-left: 2px;
+}
+
+.play-btn .icon-pause { display: none; margin-left: 0; }
+.play-btn.is-playing .icon-play { display: none; }
+.play-btn.is-playing .icon-pause { display: block; }
+
+.share-btn svg { width: 18px; height: 18px; fill: #999; }
+.share-btn:hover svg { fill: #555; }
+
+.player-seek {
+  padding: 0 26px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.player-time {
+  font-size: 12px;
+  color: #999;
+  width: 40px;
+  flex-shrink: 0;
+  font-variant-numeric: tabular-nums;
+}
+
+.player-time.time-end { text-align: right; }
+
+.seek-track {
+  position: relative;
+  flex: 1;
+  height: 4px;
+  background: #e5e5e5;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.seek-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 0%;
+  background: var(--accent-red);
+  border-radius: 2px;
+}
+
+.seek-handle {
+  position: absolute;
+  top: 50%;
+  left: 0%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  transform: translate(-50%, -50%);
+}
+
+.share-tooltip {
+  position: relative;
+}
+
+.share-tooltip .tooltip-msg {
+  position: absolute;
+  bottom: 130%;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #222;
+  color: #fff;
+  font-size: 11px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.15s ease;
+}
+
+.share-tooltip.show-tooltip .tooltip-msg { opacity: 1; }
+
+/* Episode list */
+.player-list {
+  border-top: 1px solid #ececec;
+  max-height: 460px;
+  overflow-y: auto;
+}
+
+.player-list-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 16px 26px;
+  border-bottom: 1px solid #f1f1f1;
+  cursor: pointer;
+  background: #fff;
+}
+
+.player-list-item:hover { background: #fafafa; }
+
+.player-list-item.is-active {
+  background: #fafafa;
+}
+
+.player-list-item.is-active .item-title { color: var(--accent-red); }
+
+.item-title {
+  font-size: 15px;
+  color: #333;
+  font-weight: 400;
+}
+
+.item-date {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #aaa;
+  flex-shrink: 0;
+}
+
+.player-load-more {
+  display: block;
+  width: 100%;
+  padding: 16px;
+  background: #fafafa;
+  border: none;
+  border-top: 1px solid #f1f1f1;
+  color: #888;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.player-load-more:hover { color: var(--accent-red); }
+.player-load-more[hidden] { display: none; }
+
+/* Player used embedded on About Us / Vinyl Club (no list) */
+.player.player-embed .player-list { display: none; }
+
+/* ===== Responsive ===== */
+@media (max-width: 900px) {
+  .about-grid,
+  .album {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 860px) {
+  .menu-toggle { display: flex; }
+
+  .main-navigation {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: #0d0d0d;
+    display: none;
+    z-index: 30;
+  }
+
+  .main-navigation.is-open { display: block; }
+
+  .nav-menu {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 10px 24px 24px;
+  }
+
+  .nav-menu li { width: 100%; }
+
+  .nav-menu a { padding: 12px 0; }
+}
+
+@media (max-width: 640px) {
+  .hero-inner { padding: 40px 20px 60px; }
+  .page-title { font-size: 34px; }
+  .player-header { flex-direction: column; align-items: center; text-align: center; }
+  .player-episode-desc { -webkit-line-clamp: 3; }
+  .player-controls { gap: 14px; }
+  .rate-btn { order: 5; }
+  .share-btn { order: 6; }
+}
