@@ -153,12 +153,13 @@ li { list-style: none; }
   background-image: url("../images/hero.jpg");
   background-size: cover;
   background-position: center top;
-  padding-top: 10px;
 }
 
+.hero .site-header { padding-bottom: 0; }
+
 .hero-inner {
-  padding: 60px 24px 90px;
-  max-width: 640px;
+  padding-top: 60px;
+  padding-bottom: 90px;
 }
 
 .hero-cover {
